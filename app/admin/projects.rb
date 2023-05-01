@@ -23,7 +23,7 @@ ActiveAdmin.register Project do
     id_column
     column :title
     column :body
-    column :surname
+    
     column :user
      tag_column :state do |project|
       project.state_display
@@ -44,7 +44,7 @@ ActiveAdmin.register Project do
       f.input :user
       f.input :title
       f.input :body
-      f.input :surname
+      
       f.input :state do |project|
         status_tag projects.state, class: projects.state ? :pending : :complete
       end
@@ -56,7 +56,7 @@ ActiveAdmin.register Project do
     panel "project" do
       attributes_table_for  project do
         row :title
-        row :surname
+        
         row :body 
         row :user
         row :state, :boolean
